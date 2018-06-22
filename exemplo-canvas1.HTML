@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title> </title>
+<script>
+window.onload=function(){
+//variável do canvas
+var canvas = document.getElementById("canvas");
+var context = canvas.getContext("2d");
+var i = 0;
+context.fillStyle="black";
+context.fillRect(0,0, canvas.width,canvas.height);
+context.strokeStyle = "red";
+context.lineWidth=10;
+desenharquadrado();
+
+function desenharquadrado(){
+var intervalo = window.setInterval(function() {
+ for (i=0;i<=60;i=i+20){
+context.strokeRect(40+i,40+i,40+i,40+i);}
+}, 2000);
+
+window.setTimeout(function() {
+clearInterval(intervalo);
+}, 60000);
+
+  }
+
+  };
+
+</script>
+ </head>
+<body>
+<canvas id="canvas" width="400" height="400" align="center">
+</canvas>
+</body>
+</html>
